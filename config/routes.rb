@@ -1,4 +1,3 @@
 Rails.application.routes.draw do
-  
-  get 'twi_controlls', to: 'twi_controlls#index'
+  resources :twi_controlls
 end
