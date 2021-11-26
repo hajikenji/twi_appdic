@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_25_064901) do
+ActiveRecord::Schema.define(version: 2021_11_26_044517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "twi_controlls", force: :cascade do |t|
+  create_table "twimodels", force: :cascade do |t|
+    t.text "content"
   end
 
 end
