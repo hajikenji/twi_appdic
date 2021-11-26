@@ -1,5 +1,6 @@
-<%= form_with(url:"/twi_controlls", local: true) do|form| %>
+<%= form_with(model:@twinew, url:"/twi_controlls", local: true) do|form| %>
   <div>
+    <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
   <div>

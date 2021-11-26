@@ -1,11 +1,12 @@
 class TwiControllsController < ApplicationController
   def index
+    @twiindex = Twimodel.all
   end
   def new
-    # @twi_controlls = Twi_controll.new
+    @twinew = Twimodel.new
   end
   def create
-    Twimodel.create(params[:contents])
+    Twimodel.create(content: params[:twimodel][:content])
     redirect_to "/twi_controlls"
   end
 end
