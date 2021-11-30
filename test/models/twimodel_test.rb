@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TwimodelTest < ActiveSupport::TestCase
+class Test < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

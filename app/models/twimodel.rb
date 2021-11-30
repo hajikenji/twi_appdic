@@ -1,2 +1,0 @@
-class Twimodel < ApplicationRecord
-end
