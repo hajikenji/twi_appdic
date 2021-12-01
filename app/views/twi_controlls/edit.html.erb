@@ -1,0 +1,10 @@
+<%= form_with(model:@twiupdate, local: true) do|form| %>
+  <div>
+    <p>内容 <%= @twiupdate.content %> </p>
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

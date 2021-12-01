@@ -8,6 +8,7 @@
   <% @twiindex.each do |twiindex| %>
     <tr>
       <td><%= twiindex.content %></td>
+      <td><%= link_to "編集",edit_twi_controll_path(twiindex.id) %></td>
     </tr>
   <% end %>
 </table>

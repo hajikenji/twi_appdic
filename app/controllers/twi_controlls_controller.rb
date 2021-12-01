@@ -16,14 +16,24 @@ class TwiControllsController < ApplicationController
       TwiControll.create(content: params[:twi_controll][:content])
       redirect_to "/twi_controlls"
     else
-      binding.pry
     end
   end
 
   def confirm
     @view_model_twis = TwiControll.new(content: params[:twi_controll][:content])
-    # binding.pry
+  end
 
+  def edit
+    @twiupdate = TwiControll.find(params[:id])
+  end
+
+  def update
+    @twiupdate = TwiControll.find(params[:id])
+    if @twiupdate.update(content: params[:twi_controll][:content])
+      redirect_to "/twi_controlls", notice: "Tweetを編集しました！"
+    else
+      render :edit
+    end
   end
 
   private
