@@ -9,9 +9,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @view_model_twis = Post.new(content: params[:post][:content])
+    @view_model_twis = Post.new(post_strong_params)
     if params[:back]
-      @view_model_twis = Post.new(content: params[:post][:content])
+      @view_model_twis = Post.new(post_strong_params)
       render :new
     elsif @view_model_twis.save
       
@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   end
 
   def confirm
-    @view_model_twis = Post.new(content: params[:post][:content])
+    @view_model_twis = Post.new(post_strong_params)
   end
 
   def edit
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
 
   def update
     @twiupdate = Post.find(params[:id])
-    if @twiupdate.update(content: params[:post][:content])
+    if @twiupdate.update(post_strong_params)
       redirect_to "/posts", notice: "Tweetを編集しました！"
     else
       render :edit
@@ -47,6 +47,9 @@ class PostsController < ApplicationController
   private
   def set_model_twi
     @view_model_twis = Post.new
+  end
+  def post_strong_params
+    params.require(:post).permit(:content)
   end
 
 end
