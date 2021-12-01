@@ -1,4 +1,18 @@
 <%= form_with(model:@view_model_twis, url:confirm_twi_controlls_path, local: true) do|form| %>
+  <% if @view_model_twis.errors.any? %>
+    <div id="error">
+      <h2><%= @view_model_twis.errors.count %>
+        件のエラーがあります。
+      </h2>
+      <ul>
+        <% @view_model_twis.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+        </ul>
+      </div>
+    <% end  %>
+  <% end  %>
   <div>
     <%= form.label :content %>
     <%= form.text_field :content %>
@@ -7,3 +21,5 @@
     <%= form.submit %>
   </div>
 <% end %>
+<br>
+<%= link_to "Tweet一覧に戻る", twi_controlls_path %>

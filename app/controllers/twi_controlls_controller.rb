@@ -9,13 +9,15 @@ class TwiControllsController < ApplicationController
   end
 
   def create
+    @view_model_twis = TwiControll.new(content: params[:twi_controll][:content])
     if params[:back]
       @view_model_twis = TwiControll.new(content: params[:twi_controll][:content])
       render :new
-    elsif
-      TwiControll.create(content: params[:twi_controll][:content])
+    elsif @view_model_twis.save
+      
       redirect_to "/twi_controlls"
     else
+      render :new
     end
   end
 
@@ -34,6 +36,12 @@ class TwiControllsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @twiupdate = TwiControll.find(params[:id])
+    @twiupdate.destroy
+    redirect_to "/twi_controlls", notice: "Tweetを削除しました！"
   end
 
   private
