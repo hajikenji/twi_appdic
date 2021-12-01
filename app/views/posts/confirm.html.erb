@@ -1,5 +1,5 @@
 <h3>本当に送信しますか？</h3>
-<%= form_with(model:@view_model_twis,url:"/twi_controlls",local: true) do |form| %>
+<%= form_with(model:@view_model_twis,url:"/posts",local: true) do |form| %>
   <%= form.hidden_field :content %>
   <p>内容 <%= @view_model_twis.content %> </p>
   <%= form.submit "送信する" %>

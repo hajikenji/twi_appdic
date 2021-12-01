@@ -1,2 +1,2 @@
-module TwiControllsHelper
+module PostsHelper
 end

@@ -1,4 +1,4 @@
-<%= form_with(model:@view_model_twis, url:confirm_twi_controlls_path, local: true) do|form| %>
+<%= form_with(model:@view_model_twis, url:confirm_posts_path, local: true) do|form| %>
   <% if @view_model_twis.errors.any? %>
     <div id="error">
       <h2><%= @view_model_twis.errors.count %>
@@ -22,4 +22,4 @@
   </div>
 <% end %>
 <br>
-<%= link_to "Tweet一覧に戻る", twi_controlls_path %>
+<%= link_to "Tweet一覧に戻る", posts_path %>
