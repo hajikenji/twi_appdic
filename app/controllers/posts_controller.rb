@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_model_twi, only: [:new]
 
+  def top
+  end
+
   def index
     @twiindex = Post.all
   end
@@ -14,7 +17,6 @@ class PostsController < ApplicationController
       @view_model_twis = Post.new(post_strong_params)
       render :new
     elsif @view_model_twis.save
-      
       redirect_to "/posts"
     else
       render :new
@@ -48,8 +50,8 @@ class PostsController < ApplicationController
   def set_model_twi
     @view_model_twis = Post.new
   end
+
   def post_strong_params
     params.require(:post).permit(:content)
   end
-
 end

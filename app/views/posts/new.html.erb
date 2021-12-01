@@ -1,3 +1,4 @@
+<p class="header">Tweet application</p>
 <%= form_with(model:@view_model_twis, url:confirm_posts_path, local: true) do|form| %>
   <% if @view_model_twis.errors.any? %>
     <div id="error">
@@ -23,3 +24,4 @@
 <% end %>
 <br>
 <%= link_to "Tweet一覧に戻る", posts_path %>
+<p class="footer">Tweet application</p>
